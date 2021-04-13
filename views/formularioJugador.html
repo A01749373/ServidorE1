@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="styleFormulario.css" rel="stylesheet" type="text/css" />
+        <title>Datablaze</title>
+
+    </head>
+    <body background="giphy.gif">  
+        <div class="container">
+            <img src="datablaze.png" alt = "Imagen" class="clase1"/>
+        </div>
+        <br/>
+        <br/>
+        <div class="container" class="clase3" >
+            <form action="#" method="GET">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nombreUsuario">Ingresa tu nombre:</label>
+                                <input type="nombre" class="form-control" placeholder="Nombre completo *" id="nombreUsuario" name="nombreUsuario">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group dropdown">
+                                <label for="genero">¿Con qué género te identificas?</label>
+                                <br/>
+                                <select name="genero" required>
+                                    <option></option>
+                                    <option value="1">Femenino</option>
+                                    <option value="2">Masculino</option>
+                                    <option value="3">No específico</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="usuario">Ingresa tu usuario:</label>
+                                <input type="text" class="form-control" placeholder="Username *" id="username" required name="Username"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group dropdown">
+                                <label for="pais">¿En qué país vives?</label>
+                                <br/>
+                                <select id="pais" required>
+                                    <option></option>
+                                    <option value="México">Mexico</option>
+                                    <option value="Brasil">Brasil</option>
+                                    <option value="España">España</option>
+                                    <option value="Perú">Perú</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="fechaNac">Ingresa tu fecha de nacimiento:</label>
+                                <input type="date" class="form-control" placeholder="Fecha de nacimiento *" id="fechaNac" required name="FechaNacimiento"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group dropdown">
+                                <label for="materia">¿Cuál es tu materia favorita?</label>
+                                <br/>
+                                <select id="materia"  required>
+                                    <option></option>
+                                    <option value="Ciencias">Ciencias</option>
+                                    <option value="Tecnologías">Tecnologías</option>
+                                    <option value="Artes">Artes</option>
+                                    <option value="Matemáticas">Matemáticas</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="email">Ingresa tu correo electrónico:</label>
+                                <input type="email" class="form-control" placeholder="Correo electrónico *" id="email" required name="CorreoElectronico"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="carrera">¿Qué quieres estudiar?</label>
+                                <input type="text" class="form-control" placeholder="¿Qué quieres estudiar? *" id="carrera" required name="Carrera"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="password">Ingresa tu contraseña:</label>
+                                <input type="password" class="form-control" placeholder="Contraseña *" id="password" required name="Contraseña"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <center>
+                    <button type="submit" class="btn btn-danger">Enviar</button> 
+                    <button type="reset" class="btn btn-danger">Reiniciar</button>
+                </center>                
+            </form>
+        
+        </div>
+            <br/>
+            <br/>
+            <div class="container">
+                <img src="/public/images/character.png" class="clase2"/>
+                <span><iframe width="560" height="315" src="https://www.youtube.com/embed/4AFGUA52PjY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+            </div>
+        <script src="scriptFormulario.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>
