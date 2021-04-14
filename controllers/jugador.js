@@ -15,7 +15,7 @@ exports.postAgregarJugador = (req, res)=>{
 
  
     Jugador.create({
-        username:req.body.Username,
+        username:req.body.Username, 
         password:req.body.password,
         nombre:req.body.nombreUsuario,
         fechaNacimiento:req.body.FechaNacimiento,
@@ -27,14 +27,15 @@ exports.postAgregarJugador = (req, res)=>{
         fechaRegistro: year + "-" + month + "-" + date
     }).then(resultado=>console.log("Registro exitoso"))
       .catch(error=>console.log(error)); 
-
+      
     res.redirect("/jugador/confirmacion");  
 };
 
 exports.getConfirmacion = (req,res)=>{
-    res.send("Registro exitoso");
+    //res.send("Registro exitoso");
+    res.sendFile(path.join(__dirname, '..', 'views', 'confirmacion.html')); 
 };
-
+ 
 exports.getRegistros = (req,res)=>{
     //Simular consulta
     Jugador.findAll()
@@ -60,4 +61,4 @@ exports.getRegistro = (req,res) =>{
             console.log(error);
             res.send(error);
         })
-}
+} 

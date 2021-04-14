@@ -12,10 +12,10 @@ router.get('/agregarJugador', jugadorController.getAgregarJugador);
 router.post('/agregarJugador', jugadorController.postAgregarJugador); 
 
 //Mostrar al usuario el resultado de la transaccion
-router.get('/confirmacion',jugadorController.getConfirmacion);
+router.get('/confirmacion', jugadorController.getConfirmacion);
 
 //READ
 //Mostrar los registros de la base de datos
-router.get('/registros',jugadorController.getRegistros);
+router.get('/registros', jugadorController.getRegistros);
 
 module.exports = router; 

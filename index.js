@@ -11,22 +11,22 @@ const sequelize = require('./util/database');
 // Traer las rutas 
 const jugadorRoutes = require('./routes/jugador'); 
 
-//Creación de servidor 
+//Creación de servidor  
 const app = express();
 
 //Middleware para configurar la definición de un JSON
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 
 //Middleware para configurar la recepción de formularios
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true})) 
 
 // Configurar visualización de plantilla 
 app.engine('html', require('ejs').renderFile);
 //Definir el uso de la carpeta publica
-app.use(express.static(__dirname + '/public'));
-
+app.use(express.static(path.join(__dirname, 'public')));  
+ 
 app.set('view engine', 'ejs'); 
-
+ 
 app.use('/jugador', jugadorRoutes); 
 
 let puerto=8080;
@@ -37,4 +37,4 @@ sequelize.sync()
         // Lanza el servidor para escuchar peticiones
         app.listen(puerto, ()=>console.log("Servidor en línea en el puerto 8080")); 
     })
-    .catch(error=>console.log(error));     
+    .catch(error=>console.log(error));        

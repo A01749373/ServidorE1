@@ -2,8 +2,8 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre de la BD, usuario y contraseña para SQL Server
     dialect: 'mssql',
-    host: 'localhost',
-    dialectOptions:{
+    host: '192.168.100.12', // 'localhost'
+    dialectOptions:{ 
         options:{
             useUTC: false,
             dataFirst: 1
@@ -16,4 +16,4 @@ const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre 
 }); 
 
 // Exportando el objeto sequelize 
-module.exports = sequelize;   
+module.exports = sequelize;    
