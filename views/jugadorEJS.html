@@ -20,22 +20,24 @@
             <table class="table table-hover table-bordered table-striped table-dark">
                 <thead>
                     <tr class="bg-info">
+                        <th scope="col">Usuario</th>
                         <th scope="col">Fecha de Nacimiento</th>
                         <th scope="col">Género</th>
-                        <th scope="col">País</th>
-                        <th scope="col">Usuario</th>  
-                        <th scope="col">Nivel de estudios</th>  
+                        <th scope="col">País</th>  
+                        <th scope="col">Nivel de estudios</th> 
+                        <th scope="col">Materia favorita</th>
                         <th scope="col">Carrera de interés</th> 
                     </tr>
                 </thead>
                 <tbody>
                     <%jugadores.forEach((jugador)=>{%>
                     <tr id= "r1" class="bg-primary">
+                            <td><%=jugador.username%></td>
                             <td><%=jugador.fechaNacimiento%></td>
                             <td><%=jugador.genero%></td>
                             <td><%=jugador.pais%></td>
-                            <td><%=jugador.username%></td>
                             <td><%=jugador.nivelEstudios%></td>
+                            <td><%=jugador.materiaFavorita%></td>
                             <td><%=jugador.carreraInteres%></td>          
                     </tr>
                     <%});%>
