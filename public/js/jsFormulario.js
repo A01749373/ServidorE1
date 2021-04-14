@@ -5,5 +5,4 @@ function validar(){
         document.generoJugador.focus()
         return 0;
     }
-};
 

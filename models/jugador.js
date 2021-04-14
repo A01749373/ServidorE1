@@ -43,10 +43,6 @@ const Jugador = sequelize.define('jugador', {
     fechaRegistro:{
         type: Sequelize.DATE,
         allowNulls: false,
-    },
-    opinion:{
-        type: Sequelize.TEXT,
-        allowNulls: false,
     }
 }); 
 

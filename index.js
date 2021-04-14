@@ -14,9 +14,6 @@ const jugadorRoutes = require('./routes/jugador');
 //Creación de servidor 
 const app = express();
 
-// Establecer un middleware para configurar la ubicación de nuestros elementos públicos 
-app.use(express.static(path.join(__dirname, 'public')));
-
 //Middleware para configurar la definición de un JSON
 app.use(bodyParser.json());
 
@@ -25,6 +22,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 // Configurar visualización de plantilla 
 app.engine('html', require('ejs').renderFile);
+//Definir el uso de la carpeta publica
+app.use(express.static(__dirname + '/public'));
+
 app.set('view engine', 'ejs'); 
 
 app.use('/jugador', jugadorRoutes); 

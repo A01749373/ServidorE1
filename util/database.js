@@ -1,8 +1,8 @@
 // Generar conexión con la BD
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('datablaze', 'sa', 'Password1234$', { // Nombre de la BD, usuario y contraseña para SQL Server
+const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre de la BD, usuario y contraseña para SQL Server
     dialect: 'mssql',
-    host: '192.168.1.64',
+    host: 'localhost',
     dialectOptions:{
         options:{
             useUTC: false,
