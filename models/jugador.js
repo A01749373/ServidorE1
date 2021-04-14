@@ -7,7 +7,11 @@ const Jugador = sequelize.define('jugador', {
         type: Sequelize.STRING(50),
         allowNulls: false, 
         primaryKey: true
-    }, 
+    },
+    correo:{
+        type: Sequelize.STRING(250),
+        allowNulls: false
+    },
     password:{
         type: Sequelize.STRING(50),
         allowNulls: false,

@@ -21,6 +21,7 @@
                 <thead>
                     <tr class="bg-info">
                         <th scope="col">Usuario</th>
+                        <th scope="col">Correo</th>
                         <th scope="col">Fecha de Nacimiento</th>
                         <th scope="col">Género</th>
                         <th scope="col">País</th>  
@@ -33,6 +34,7 @@
                     <%jugadores.forEach((jugador)=>{%>
                     <tr id= "r1" class="bg-primary">
                             <td><%=jugador.username%></td>
+                            <td><%=jugador.correo%></td>
                             <td><%=jugador.fechaNacimiento%></td>
                             <td><%=jugador.genero%></td>
                             <td><%=jugador.pais%></td>

@@ -15,7 +15,8 @@ exports.postAgregarJugador = (req, res)=>{
 
  
     Jugador.create({
-        username:req.body.Username, 
+        username:req.body.Username,
+        correo:req.body.CorreoElectronico,
         password:req.body.password,
         nombre:req.body.nombreUsuario,
         fechaNacimiento:req.body.FechaNacimiento,
