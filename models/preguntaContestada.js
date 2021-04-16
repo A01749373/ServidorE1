@@ -19,6 +19,10 @@ const PreguntaContestada = (sequelize)=>{
         opcionContestada:{
             type:Sequelize.STRING,
             allowNull:false
+        },
+        estado:{
+            type:Sequelize.STRING,
+            allowNull:false
         }
         
     })

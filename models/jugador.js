@@ -47,7 +47,16 @@ const Jugador = sequelize.define('jugador', {
     fechaRegistro:{
         type: Sequelize.DATE,
         allowNulls: false,
+    },
+    tiempoTotal:{
+        type: Sequelize.float, //No estoy segura de que sea float
+        allowNulls: false,
+    },
+    puntajeTotal:{
+        type: Sequelize.INTEGER,
+        allowNulls: false,
     }
+
 }); 
 
 module.exports = Jugador; 

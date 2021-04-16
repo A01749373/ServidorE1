@@ -10,13 +10,18 @@ const sequelize = require('./util/database');
 
 // Traer las rutas 
 const jugadorRoutes = require('./routes/jugador'); 
+const preguntaRoutes = require("./routes/pregunta");
+const preguntaContestadaRoutes = require("./routes/preguntaContestada");
 
 //Creación de servidor  
 const app = express();
 
 //Middleware para configurar la definición de un JSON
 app.use(bodyParser.json()); 
-
+app.use('/jugador', jugadorRoutes); 
+app.use('/pregunta',preguntaRoutes);
+app.use('/preguntaContestada',preguntaContestadaRoutes);
+/*
 //Middleware para configurar la recepción de formularios
 app.use(bodyParser.urlencoded({extended:true})) 
 
@@ -26,12 +31,12 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, 'public')));  
  
 app.set('view engine', 'ejs'); 
- 
-app.use('/jugador', jugadorRoutes); 
+ */
+
 
 let puerto=8080;
 // Establece vínculo entre la conexión del servidor y la BD
-sequelize.sync()
+sequelize.sync({force:false})
     .then(resultado=>{
         console.log("Conexión exitosa");
         // Lanza el servidor para escuchar peticiones
