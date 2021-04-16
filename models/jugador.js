@@ -47,7 +47,8 @@ const Jugador = sequelize.define('jugador', {
     fechaRegistro:{
         type: Sequelize.DATE,
         allowNulls: false,
-    },
+    }
+    /*
     tiempoTotal:{
         type: Sequelize.float, //No estoy segura de que sea float
         allowNulls: false,
@@ -55,7 +56,7 @@ const Jugador = sequelize.define('jugador', {
     puntajeTotal:{
         type: Sequelize.INTEGER,
         allowNulls: false,
-    }
+    }*/
 
 }); 
 
