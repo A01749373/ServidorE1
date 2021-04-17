@@ -8,24 +8,8 @@ const Nivel = (sequelize)=>{
             primaryKey: true,
             autoIncrement: true
         },
-        IdArma:{
-            type: Sequelize.STRING(50),
-            allowNull: false
-        },
         Nombre:{
             type: Sequelize.STRING(50),
-            allowNull: false
-        },
-        Enemigo:{
-            type: Sequelize.STRING(50),
-            allowNull: false
-        },
-        Amigo:{
-            type: Sequelize.STRING(50),
-            allowNull: false
-        },
-        Puntaje:{
-            type: Sequelize.INTEGER,
             allowNull: false
         },
     })

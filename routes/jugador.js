@@ -18,4 +18,7 @@ router.get('/confirmacion', jugadorController.getConfirmacion);
 //Mostrar los registros de la base de datos
 router.get('/registros', jugadorController.getRegistros);
 
+//Busca el jugador para poder iniciar sesión
+router.post('/BuscarJugador',jugadorController.postBuscarJugador);
+
 module.exports = router; 

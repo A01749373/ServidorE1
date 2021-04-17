@@ -5,48 +5,48 @@ const sequelize = require('../util/database');
 const Jugador = sequelize.define('jugador', {
     username:{
         type: Sequelize.STRING(50),
-        allowNulls: false, 
+        allowNull: false, 
         primaryKey: true
     },
     correo:{
         type: Sequelize.STRING(250),
-        allowNulls: false
+        allowNull: false
     },
     password:{
         type: Sequelize.STRING(50),
-        allowNulls: false,
+        allowNull: false,
     },
     nombre:{
         type: Sequelize.STRING(50),
-        allowNulls: false,
+        allowNull: false,
     },
     fechaNacimiento:{
         type: Sequelize.DATEONLY,
-        allowNulls: false,
+        allowNull: false,
     },
     genero:{
         type: Sequelize.STRING(15),
-        allowNulls: false,
+        allowNull: false,
     },
     pais:{
         type: Sequelize.STRING(50),
-        allowNulls: false,
+        allowNull: false,
     },
     nivelEstudios:{
         type: Sequelize.STRING(50),
-        allowNulls: false,
+        allowNull: false,
     },
     carreraInteres:{
         type: Sequelize.STRING(50),
-        allowNulls: false,
+        allowNull: false,
     },
     materiaFavorita:{
         type: Sequelize.STRING(50),
-        allowNulls: false,
+        allowNull: false,
     },
     fechaRegistro:{
         type: Sequelize.DATE,
-        allowNulls: false,
+        allowNull: false,
     }
     /*
     tiempoTotal:{

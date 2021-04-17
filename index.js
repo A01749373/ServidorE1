@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use('/jugador', jugadorRoutes); 
 app.use('/pregunta',preguntaRoutes);
 app.use('/preguntaContestada',preguntaContestadaRoutes);
-/*
+
 //Middleware para configurar la recepción de formularios
 app.use(bodyParser.urlencoded({extended:true})) 
 
@@ -31,8 +31,6 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, 'public')));  
  
 app.set('view engine', 'ejs'); 
- */
-
 
 let puerto=8080;
 // Establece vínculo entre la conexión del servidor y la BD
@@ -42,4 +40,4 @@ sequelize.sync({force:false})
         // Lanza el servidor para escuchar peticiones
         app.listen(puerto, ()=>console.log("Servidor en línea en el puerto 8080")); 
     })
-    .catch(error=>console.log(error));        
+    .catch(error=>console.log(error));       

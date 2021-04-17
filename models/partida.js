@@ -8,11 +8,11 @@ const Partida = (sequelize)=>{
             primaryKey: true,
             autoIncrement: true
         },
-        TiempoInicio:{
+        TiempoPartida:{
             type: Sequelize.STRING(50),
             allowNull: false
         },
-        TiempoFinal:{
+        Puntaje:{
             type: Sequelize.STRING(50),
             allowNull: false
         },

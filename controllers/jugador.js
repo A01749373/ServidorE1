@@ -1,6 +1,8 @@
 // Modelo asociado a la tabla jugador 
 const Jugador = require('../models/jugador'); 
-const path = require('path'); 
+const path = require('path');
+const sequelize = require('../util/database');
+
 
 exports.getAgregarJugador = (req, res)=>{
     res.sendFile(path.join(__dirname, '..', 'views', 'formularioJugador.html')); 
@@ -63,3 +65,26 @@ exports.getRegistro = (req,res) =>{
             res.send(error);
         })
 } 
+
+exports.postBuscarJugador= (req,res)=>{
+    console.log(req.body)
+    Jugador.findAll({
+    where: {
+        username: req.body.usuarioUsuarioo,
+        password: req.body.passwordUsuarioo
+      }
+    })
+    .then(registros=>{
+        //console.log(registros)
+        var data=[];
+        registros.forEach(registro=>{
+            data.push(registro.dataValues);
+        });
+        console.log(data)
+        if (registros.length == 0){
+            res.send('Usuario o contraseña incorrecto')
+        }else{
+            res.send('')
+        }
+    }).catch(error => console.log(error))
+};
