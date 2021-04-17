@@ -1,36 +1,25 @@
-//Importación de biblioteca para creación de servidores
-const express = require("express")
-//Biblioteca para generar rutas de acuerdo al sistema operativo
+const bodyParser = require("body-parser");
 const path = require("path")
-//Biblioteca para definir JSON
-const bodyParser = require("body-parser")
+const express = require('express');
+const sequelize = require('./util/database') 
 
-// Traer conexión con la BD
-const sequelize = require('./util/database'); 
+const app=express()
 
-// Traer las rutas 
-const jugadorRoutes = require('./routes/jugador'); 
+app.use(express.static(path.join(__dirname,"public"))); 
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+const jugadorRoutes = require('./routes/jugador')
 const preguntaRoutes = require("./routes/pregunta");
 const preguntaContestadaRoutes = require("./routes/preguntaContestada");
 
-//Creación de servidor  
-const app = express();
-
-//Middleware para configurar la definición de un JSON
-app.use(bodyParser.json()); 
-app.use('/jugador', jugadorRoutes); 
+app.use('/jugador', jugadorRoutes);
 app.use('/pregunta',preguntaRoutes);
 app.use('/preguntaContestada',preguntaContestadaRoutes);
-
-//Middleware para configurar la recepción de formularios
-app.use(bodyParser.urlencoded({extended:true})) 
-
-// Configurar visualización de plantilla 
 app.engine('html', require('ejs').renderFile);
-//Definir el uso de la carpeta publica
-app.use(express.static(path.join(__dirname, 'public')));  
- 
 app.set('view engine', 'ejs'); 
+
 
 let puerto=8080;
 // Establece vínculo entre la conexión del servidor y la BD
