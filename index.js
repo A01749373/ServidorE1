@@ -13,10 +13,15 @@ app.use(bodyParser.urlencoded({extended:true}));
 const jugadorRoutes = require('./routes/jugador')
 const preguntaRoutes = require("./routes/pregunta");
 const preguntaContestadaRoutes = require("./routes/preguntaContestada");
+const nivelRoutes = require("./routes/nivel");
+const partidaRoutes = require("./routes/partida");
 
 app.use('/jugador', jugadorRoutes);
 app.use('/pregunta',preguntaRoutes);
 app.use('/preguntaContestada',preguntaContestadaRoutes);
+app.use('/nivel',nivelRoutes);
+app.use('/partida',partidaRoutes);
+
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs'); 
 
