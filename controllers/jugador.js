@@ -1,5 +1,5 @@
 // Modelo asociado a la tabla jugador 
-const Jugador = require('../models/jugador'); 
+const Jugador = require('../util/database').models.jugador; 
 const path = require('path');
 const sequelize = require('../util/database');
 
