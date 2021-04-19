@@ -1,10 +1,11 @@
-/*
 //Función que recibe el objeto de conexión
 function applyRelations(sequelize){
     console.log(sequelize.models);
     const Jugador = sequelize.models.jugador;
     const Pregunta = sequelize.models.pregunta;
     const PreguntaContestada = sequelize.models.preguntaContestada;
+    const Nivel = sequelize.models.nivel;
+    const Partida = sequelize.models.partida;
 
     
     //Relación Jugador - PreguntaContestada
@@ -26,7 +27,18 @@ function applyRelations(sequelize){
     //Una pregunta solo puede ser asignada a una pregutna contestada
     Pregunta.belongsTo(PreguntaContestada);
 
+    //Relación Jugador - Partida
+    //Un jugador puede tener muchas partidas
+    Jugador.hasMany(Partida);
+    //Una partida solo puede ser de un jugador
+    Partida.belongsTo(Jugador);
+
+    //Relación Nivel - Partida
+    //Un nivel puede tener muchas partidas
+    Nivel.hasMany(Partida);
+    //Una partida solo puede ser asignada a un nivel
+    Partida.belongsTo(Nivel);
+
 }
 
 module.exports = {applyRelations};
-*/

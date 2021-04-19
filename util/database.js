@@ -21,7 +21,9 @@ const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre 
 const modelDefiners = [
     //require('../models/jugador'),
     require('../models/pregunta'),
-    require('../models/preguntaContestada')
+    require('../models/preguntaContestada'),
+    require('../models/nivel'),
+    require('../models/partida')
 ];
 
 //Vincular el objeto de conexión con los modelos
