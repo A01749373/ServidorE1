@@ -23,9 +23,9 @@ function applyRelations(sequelize){
 
     //Relación PreguntaContestada - Pregunta
     //Una pregunta contestada registra muchas preguntas
-    PreguntaContestada.hasMany(Pregunta);
+    Pregunta.hasMany(PreguntaContestada);
     //Una pregunta solo puede ser asignada a una pregutna contestada
-    Pregunta.belongsTo(PreguntaContestada);
+    PreguntaContestada.belongsTo(Pregunta);
 
     //Relación Jugador - Partida
     //Un jugador puede tener muchas partidas

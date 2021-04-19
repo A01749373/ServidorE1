@@ -8,14 +8,6 @@ const Pregunta = (sequelize)=>{
             primaryKey:true,
             autoIncrement: true,
         },
-        idNivel:{
-            type:Sequelize.INTEGER,
-            allowNull:false
-        },
-        idPu:{
-            type:Sequelize.INTEGER,
-            allowNull:false
-        },
         categoria:{
             type:Sequelize.STRING,
             allowNull:false

@@ -8,6 +8,7 @@ const PreguntaContestada = (sequelize)=>{
             primaryKey:true,
             autoIncrement: true,
         },
+        /*
         username:{
             type:Sequelize.STRING,
             allowNull:false
@@ -15,7 +16,7 @@ const PreguntaContestada = (sequelize)=>{
         idPregunta:{
             type:Sequelize.INTEGER,
             allowNull:false
-        },
+        },*/
         opcionContestada:{
             type:Sequelize.STRING,
             allowNull:false

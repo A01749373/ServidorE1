@@ -16,14 +16,6 @@ const Partida = (sequelize)=>{
             type: Sequelize.STRING(50),
             allowNull: false
         },
-        usuario:{
-            type: Sequelize.STRING(50),
-            allowNull: false
-        },
-        idNivel:{
-            type: Sequelize.INTEGER,
-            allowNull: false
-        }
     })
 };
 

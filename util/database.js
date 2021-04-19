@@ -1,6 +1,6 @@
 // Generar conexión con la BD
 const Sequelize = require('sequelize');
-//const {applyRelations} = require('./relations');
+const {applyRelations} = require('./relations');
 
 const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre de la BD, usuario y contraseña para SQL Server
     dialect: 'mssql',
@@ -19,7 +19,7 @@ const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre 
 
 //Cargar los modelos
 const modelDefiners = [
-    //require('../models/jugador'),
+    require('../models/jugador'),
     require('../models/pregunta'),
     require('../models/preguntaContestada'),
     require('../models/nivel'),
@@ -32,7 +32,7 @@ for(const modelDefiner of modelDefiners){
 }
 
 //Construir las relaciones
-//applyRelations(sequelize);
+applyRelations(sequelize);
 
 // Exportando el objeto sequelize 
 module.exports = sequelize;    
