@@ -34,6 +34,32 @@ exports.postAgregarJugador = (req, res)=>{
     res.redirect("/jugador/confirmacion");  
 };
 
+exports.postAgregarJugadorUnity = (req, res)=>{
+    console.log(req.body);
+    let now = new Date();
+    let date = ("0" + now.getDate()).slice(-2);
+    let month = ("0" + (now.getMonth() + 1)).slice(-2);
+    let year = now.getFullYear();
+
+ 
+    Jugador.create({
+        username:req.body.Username,
+        correo:req.body.CorreoElectronico,
+        password:req.body.password,
+        nombre:req.body.nombreUsuario,
+        fechaNacimiento:req.body.FechaNacimiento,
+        genero: req.body.genero,
+        pais: req.body.pais,
+        nivelEstudios: req.body.nivel,
+        carreraInteres: req.body.Carrera,
+        materiaFavorita: req.body.materia,
+        fechaRegistro: year + "-" + month + "-" + date
+    }).then(resultado=>console.log("Registro exitoso"))
+      .catch(error=>console.log(error)); 
+
+      res.send("Registro Exitoso")
+};
+
 exports.getConfirmacion = (req,res)=>{
     //res.send("Registro exitoso");
     res.sendFile(path.join(__dirname, '..', 'views', 'confirmacion.html')); 

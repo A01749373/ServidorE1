@@ -8,6 +8,9 @@ const router = express.Router();
 // Mostrar el formulario 
 router.get('/agregarJugador', jugadorController.getAgregarJugador); 
 
+//Agregar Registro desde Unity
+router.post('/agregarJugadorUnity', jugadorController.postAgregarJugadorUnity); 
+
 // Obtener los datos del formulario 
 router.post('/agregarJugador', jugadorController.postAgregarJugador); 
 
