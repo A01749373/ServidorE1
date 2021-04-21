@@ -57,7 +57,7 @@ exports.postAgregarJugadorUnity = (req, res)=>{
     }).then(resultado=>console.log("Registro exitoso"))
       .catch(error=>console.log(error)); 
 
-      res.send("Registro Exitoso")
+      res.send("")
 };
 
 exports.getConfirmacion = (req,res)=>{
@@ -111,6 +111,27 @@ exports.postBuscarJugador= (req,res)=>{
             res.send('Usuario o contraseña incorrecto')
         }else{
             res.send('')
+        }
+    }).catch(error => console.log(error))
+};
+
+exports.postBuscarJugadorUnity= (req,res)=>{
+    console.log(req.body)
+    Jugador.findAll({
+    where: {
+        username: req.body.usuarioUsuarioo,
+      }
+    })
+    .then(registros=>{
+        var data=[];
+        registros.forEach(registro=>{
+            data.push(registro.dataValues);
+        });
+        console.log(data)
+        if (registros.length == 0){
+            res.send('')
+        }else{
+            res.send('Usuario ya existente')
         }
     }).catch(error => console.log(error))
 };

@@ -24,4 +24,7 @@ router.get('/registros', jugadorController.getRegistros);
 //Busca el jugador para poder iniciar sesión
 router.post('/BuscarJugador',jugadorController.postBuscarJugador);
 
+//Busca el jugador para poder crear registro
+router.post('/BuscarJugadorUnity',jugadorController.postBuscarJugadorUnity);
+
 module.exports = router; 
