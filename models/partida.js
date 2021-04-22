@@ -9,11 +9,11 @@ const Partida = (sequelize)=>{
             autoIncrement: true
         },
         TiempoPartida:{
-            type: Sequelize.STRING(50),
+            type: Sequelize.FLOAT,
             allowNull: false
         },
         Puntaje:{
-            type: Sequelize.STRING(50),
+            type: Sequelize.INTEGER,
             allowNull: false
         },
     })
