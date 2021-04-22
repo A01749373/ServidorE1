@@ -32,7 +32,10 @@ const Pregunta = (sequelize)=>{
             type:Sequelize.STRING,
             allowNull:false
         },
-        
+        opcion4:{
+            type:Sequelize.STRING,
+            allowNull:false
+        }
     })
 };
 
