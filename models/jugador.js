@@ -46,15 +46,16 @@ const Jugador = (sequelize) =>{
         fechaRegistro:{
             type: Sequelize.DATE,
             allowNull: false,
-        },
+        }
+        /*
         tiempoTotal:{
-            type: Sequelize.FLOAT, //No estoy segura de que sea float
+            type: Sequelize.float, //No estoy segura de que sea float
             allowNulls: false,
         },
         puntajeTotal:{
             type: Sequelize.INTEGER,
             allowNulls: false,
-        }
+        }*/
     })
 }
 module.exports = Jugador; 
