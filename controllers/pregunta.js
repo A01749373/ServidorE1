@@ -19,7 +19,7 @@ var n = 1;
 
 exports.getObtenerPregunta = (req, res)=>{
     console.log(req.body);  
-    Pregunta.findAll({
+    Pregunta.findAll({ 
         attributes: ['textoPregunta'],
         where: {
             idPregunta: n 
