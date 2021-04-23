@@ -1,5 +1,6 @@
 //Traer el modelo dentro del objeto de conexión
 const PreguntaContestada = require('../util/database').models.preguntaContestada;
+const idPregunta = require('../controllers/pregunta').getObtenerIdPregunta;
 
 /*exports.postAgregarPreguntaContestada =(req,res)=>{
     console.log(req.body);
@@ -19,8 +20,8 @@ exports.postAgregarPreguntaContestada = (req,res)=>{
     PreguntaContestada.create({
         opcionContestada: req.body.opcionContestada,
         estado: req.body.estado,
-        //username: req.body.Username,
-        //preguntaIdPregunta: idPregunta
+        jugadorUsername: req.body.jugadorUsername,
+        preguntumIdPregunta: req.body.preguntumIdPregunta
     }).then(resultado=>console.log("Registro exitoso"))
     .catch(error=>console.log(error)); 
 

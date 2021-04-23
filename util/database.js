@@ -4,7 +4,7 @@ const {applyRelations} = require('./relations');
 
 const sequelize = new Sequelize('Datablaze', 'sa', 'Password1234$', { // Nombre de la BD, usuario y contraseña para SQL Server
     dialect: 'mssql',
-    host: '192.168.1.65', // 'localhost'
+    host: 'localhost', // 'localhost'
     dialectOptions:{ 
         options:{
             useUTC: false,

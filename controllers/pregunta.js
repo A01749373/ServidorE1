@@ -107,3 +107,21 @@ exports.getObtenerRespuestaCorrecta = (req, res)=>{
         }); 
     }).catch(error=>console.log(error)) 
 };  
+
+
+/*-------------------------------------------------------*/
+exports.getObtenerIdPregunta = (req, res)=>{
+    console.log(req.body);  
+    Pregunta.findAll({ 
+        attributes: ['idPregunta'],
+        where: {
+            idPregunta: n 
+        }
+    }).then(id=>{
+        id.forEach(idPregunta=>{
+            console.log(idPregunta.dataValues.idPregunta); 
+            res.send(idPregunta.dataValues.idPregunta); 
+        }); 
+        //res.send("Búsqueda exitosa")
+    }).catch(error=>console.log(error)) 
+}; 
