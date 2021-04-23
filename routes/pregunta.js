@@ -16,4 +16,8 @@ router.get('/buscarOpcion4', preguntaController.getObtenerOpcion4);
 
 router.get('/buscarRespuestaCorrecta', preguntaController.getObtenerRespuestaCorrecta); 
 
+
+/*-----------------------------------------------------------------------------*/
+router.get('/getIdPregunta', preguntaController.getObtenerIdPregunta); 
+
 module.exports = router;

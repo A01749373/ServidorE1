@@ -22,7 +22,7 @@ exports.getObtenerPregunta = (req, res)=>{
     Pregunta.findAll({ 
         attributes: ['textoPregunta'],
         where: {
-            idPregunta: n 
+            idPregunta: n
         }
     }).then(preguntas=>{
         preguntas.forEach(pregunta=>{
@@ -125,3 +125,4 @@ exports.getObtenerIdPregunta = (req, res)=>{
         //res.send("Búsqueda exitosa")
     }).catch(error=>console.log(error)) 
 }; 
+

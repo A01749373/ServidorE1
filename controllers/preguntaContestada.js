@@ -21,7 +21,7 @@ exports.postAgregarPreguntaContestada = (req,res)=>{
         opcionContestada: req.body.opcionContestada,
         estado: req.body.estado,
         jugadorUsername: req.body.jugadorUsername,
-        preguntumIdPregunta: req.body.preguntumIdPregunta
+        //preguntumIdPregunta: req.body.preguntumIdPregunta
     }).then(resultado=>console.log("Registro exitoso"))
     .catch(error=>console.log(error)); 
 
