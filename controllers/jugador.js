@@ -28,10 +28,14 @@ exports.postAgregarJugador = (req, res)=>{
         carreraInteres: req.body.Carrera,
         materiaFavorita: req.body.materia,
         fechaRegistro: year + "-" + month + "-" + date
-    }).then(resultado=>console.log("Registro exitoso"))
-      .catch(error=>console.log(error)); 
-      
-    res.redirect("/jugador/confirmacion");  
+    }).then(resultado=>{
+        console.log("Registro exitoso")
+    res.redirect("/jugador/confirmacion")
+    })
+    .catch(error=>{
+        console.log(error)
+        res.send("Nombre de usuario ya existente");
+    }); 
 };
 
 exports.postAgregarJugadorUnity = (req, res)=>{
