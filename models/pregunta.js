@@ -35,7 +35,10 @@ const Pregunta = (sequelize)=>{
         opcion4:{
             type:Sequelize.STRING,
             allowNull:false
-        }
+        },
+        textoPista:{
+            type:Sequelize.STRING,
+            allowNull: false
     })
 };
 
