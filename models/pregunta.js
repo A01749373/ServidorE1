@@ -39,6 +39,7 @@ const Pregunta = (sequelize)=>{
         textoPista:{
             type:Sequelize.STRING,
             allowNull: false
+        }
     })
 };
 
