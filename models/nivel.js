@@ -6,7 +6,7 @@ const Nivel = (sequelize)=>{
             type: Sequelize.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            //autoIncrement: true
         },
         Nombre:{
             type: Sequelize.STRING(50),

@@ -6,7 +6,7 @@ const Pregunta = (sequelize)=>{
             type:Sequelize.INTEGER,
             allowNull:false,
             primaryKey:true,
-            autoIncrement: true,
+            //autoIncrement: true,
         },
         categoria:{
             type:Sequelize.STRING,
