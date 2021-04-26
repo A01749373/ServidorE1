@@ -28,7 +28,7 @@ exports.getObtenerPreguntaNivel1 = (req, res)=>{
     n1 = Math.floor(Math.random()*9)+1;
     console.log(req.body);  
     Pregunta.findAll({ 
-        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'pista'],
+        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'textoPista'],
         where: {
             idPregunta: n1,
             nivelIdNivel: 1
@@ -36,7 +36,7 @@ exports.getObtenerPreguntaNivel1 = (req, res)=>{
     }).then(preguntas=>{
         preguntas.forEach(pregunta=>{ 
             console.log(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4);  
-            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.pista); 
+            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.textoPista); 
         }); 
     }).catch(error=>console.log(error)) 
 };
@@ -47,7 +47,7 @@ exports.getObtenerPreguntaNivel2 = (req, res)=>{
     n2 = Math.floor(Math.random()*9)+11;
     console.log(req.body);  
     Pregunta.findAll({ 
-        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'pista'],
+        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'textoPista'],
         where: {
             idPregunta: n2,
             nivelIdNivel: 2
@@ -55,7 +55,7 @@ exports.getObtenerPreguntaNivel2 = (req, res)=>{
     }).then(preguntas=>{
         preguntas.forEach(pregunta=>{ 
             console.log(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4); 
-            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.pista);
+            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.textoPista);
         }); 
     }).catch(error=>console.log(error)) 
 };
@@ -66,7 +66,7 @@ exports.getObtenerPreguntaNivel3 = (req, res)=>{
     n3 = Math.floor(Math.random()*9)+21;
     console.log(req.body);  
     Pregunta.findAll({ 
-        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'pista'],
+        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'textoPista'],
         where: {
             idPregunta: n3,
             nivelIdNivel: 3
@@ -74,7 +74,7 @@ exports.getObtenerPreguntaNivel3 = (req, res)=>{
     }).then(preguntas=>{
         preguntas.forEach(pregunta=>{ 
             console.log(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4); 
-            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.pista);
+            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.textoPista);
         }); 
     }).catch(error=>console.log(error)) 
 };
@@ -85,7 +85,7 @@ exports.getObtenerPreguntaNivel4 = (req, res)=>{
     n4 = Math.floor(Math.random()*9)+31;
     console.log(req.body);  
     Pregunta.findAll({ 
-        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'pista'],
+        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'textoPista'],
         where: {
             idPregunta: n4,
             nivelIdNivel: 4
@@ -93,7 +93,7 @@ exports.getObtenerPreguntaNivel4 = (req, res)=>{
     }).then(preguntas=>{
         preguntas.forEach(pregunta=>{ 
             console.log(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4); 
-            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.pista);
+            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.textoPista);
         });
     }).catch(error=>console.log(error)) 
 };
@@ -104,7 +104,7 @@ exports.getObtenerPreguntaNivel5 = (req, res)=>{
     n5 = Math.floor(Math.random()*9)+41;
     console.log(req.body);  
     Pregunta.findAll({ 
-        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'pista'],
+        attributes: ['textoPregunta', 'categoria', 'opcion1', 'opcion2', 'opcion3', 'opcion4', 'respuesta', 'idPregunta', 'textoPista'],
         where: {
             idPregunta: n5,
             nivelIdNivel: 5
@@ -112,7 +112,7 @@ exports.getObtenerPreguntaNivel5 = (req, res)=>{
     }).then(preguntas=>{
         preguntas.forEach(pregunta=>{ 
             console.log(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4); 
-            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.pista);
+            res.send(pregunta.dataValues.textoPregunta+"&"+pregunta.dataValues.opcion1+"&"+pregunta.dataValues.opcion2+"&"+pregunta.dataValues.opcion3+"&"+pregunta.dataValues.opcion4+"&"+pregunta.dataValues.respuesta+"&"+pregunta.dataValues.idPregunta+"&"+pregunta.dataValues.categoria+"&"+pregunta.dataValues.textoPista);
         });
     }).catch(error=>console.log(error)) 
 };
