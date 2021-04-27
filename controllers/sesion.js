@@ -23,6 +23,7 @@ exports.postBuscarUsuario = (req,res)=>{
         console.log(data)
         if (registros.length == 0){
             res.redirect('/Sesion/iniciaSesion')
+            //Window.alert("Usuario no válido");
         }else{
             res.redirect("/Sesion/exito");
         }
