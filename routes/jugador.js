@@ -21,6 +21,8 @@ router.get('/confirmacion', jugadorController.getConfirmacion);
 //Mostrar los registros de la base de datos
 router.get('/registros', jugadorController.getRegistros);
 
+router.get('/estadisticas', jugadorController.getEstadisticas);
+
 //Busca el jugador para poder iniciar sesión
 router.post('/BuscarJugador',jugadorController.postBuscarJugador);
 

@@ -20,12 +20,18 @@ exports.postBuscarUsuario = (req,res)=>{
         registros.forEach(registro=>{
             data.push(registro.dataValues);
         });
+        
         console.log(data)
+        
         if (registros.length == 0){
             res.redirect('/Sesion/iniciaSesion')
             //Window.alert("Usuario no válido");
         }else{
-            res.redirect("/Sesion/exito");
+            res.render('sesionExitosa.html', {
+                usuarios: data
+            }),
+            res.redirect("/Sesion/exito")
+            
         }
     })
 };

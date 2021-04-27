@@ -84,6 +84,22 @@ exports.getRegistros = (req,res)=>{
         })   
 };
 
+
+exports.getEstadisticas = (req,res)=>{
+    //Simular consulta
+    Jugador.findAll()
+        .then(registros=>{
+            var data=[];
+            registros.forEach(registro=>{
+                data.push(registro.dataValues);
+            });
+            console.log(data);
+            res.render('estadisticas.html',{
+                jugadores:data
+            });
+        })   
+};
+
 exports.getRegistro = (req,res) =>{
     console.log(req.params);
     Jugador.findByPk(req.params.usuario)
