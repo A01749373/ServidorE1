@@ -18,6 +18,9 @@ exports.postAgregarPartida = (req,res)=>{
         sequelize.query("update [dbo].[jugador] set  [puntajeTotal] = (select sum([Puntaje]) from [dbo].[partida] where jugadorUsername=" + "'" + req.body.Usuario +"'" + ") where username= " + "'"+ req.body.Usuario + "'",{
             type: Sequelize.QueryTypes.UPDATE
         })
+        sequelize.query("update [dbo].[jugador] set [nivel] = (select max([nivelIdNivel] from [dbo].[partida] where jugadorUsername=" + "'" + req.body.Usuario +"'" + ") where username= " + "'"+ req.body.Usuario + "'",{
+            type: Sequelize.QueryTypes.UPDATE
+        })
       .catch(error=>console.log(error));
       })
       res.send('Partida Agregada')
@@ -43,20 +46,5 @@ exports.postBuscarJugador= (req,res)=>{
         }else{
             res.send('')
         }
-    }).catch(error => console.log(error))
-};
-
-exports.postBuscarNivel= (req,res)=>{
-    //console.log(req.body)
-    sequelize.query("select max([nivelIdNivel]) as nivel from [dbo].[partida] where [jugadorUsername] =" + "'" + req.body.usuarioUsuarioo +"'",{
-        type: Sequelize.QueryTypes.SELECT
-    })
-    .then(registros=>{
-        var data = [];
-        registros.forEach(registro=>{
-            data.push(registro);
-        })
-    //console.log((String(data[0].nivel)));
-    res.send(String(data[0].nivel))
     }).catch(error => console.log(error))
 };

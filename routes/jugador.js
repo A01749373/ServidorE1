@@ -28,5 +28,7 @@ router.post('/BuscarJugador',jugadorController.postBuscarJugador);
 
 //Busca el jugador para poder crear registro
 router.post('/BuscarJugadorUnity',jugadorController.postBuscarJugadorUnity);
+router.post('/BuscarNivel', jugadorController.postBuscarNivel);
+router.post('/ActualizarNivel', jugadorController.postActualizarNivel);
 
 module.exports = router; 

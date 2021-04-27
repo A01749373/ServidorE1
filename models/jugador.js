@@ -54,6 +54,10 @@ const Jugador = (sequelize) =>{
         puntajeTotal:{
             type: Sequelize.INTEGER,
             allowNulls: false,
+        },
+        nivel:{
+            type: Sequelize.INTEGER,
+            allowNulls: false
         }
     })
 }

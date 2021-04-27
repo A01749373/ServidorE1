@@ -2,7 +2,7 @@
 const Jugador = require('../util/database').models.jugador; 
 const path = require('path');
 const sequelize = require('../util/database');
-
+const Sequelize = require('sequelize');
 
 exports.getAgregarJugador = (req, res)=>{
     res.sendFile(path.join(__dirname, '..', 'views', 'formularioJugador.html')); 
@@ -57,7 +57,8 @@ exports.postAgregarJugadorUnity = (req, res)=>{
         nivelEstudios: req.body.nivel,
         carreraInteres: req.body.Carrera,
         materiaFavorita: req.body.materia,
-        fechaRegistro: year + "-" + month + "-" + date
+        fechaRegistro: year + "-" + month + "-" + date,
+        nivel: 1
     }).then(resultado=>console.log("Registro exitoso"))
       .catch(error=>console.log(error)); 
 
@@ -153,5 +154,32 @@ exports.postBuscarJugadorUnity= (req,res)=>{
         }else{
             res.send('Usuario ya existente')
         }
+    }).catch(error => console.log(error))
+};
+
+exports.postActualizarNivel = (req,res)=>{ 
+    nivel = parseInt(req.body.nivel);
+    sequelize.query("update [dbo].[jugador] set [nivel] =" + "'" + nivel + "'" + "where [username] =" + "'" + req.body.Usuario +"'",{
+        type: Sequelize.QueryTypes.UPDATE
+    })
+    .then(resultado=>{
+        console.log("Partida Agregada")
+      .catch(error=>console.log(error));
+      })
+      res.send('Nivel Actualizado')
+};
+
+exports.postBuscarNivel= (req,res)=>{
+    //console.log(req.body)
+    sequelize.query("select [nivel] as nivel from [dbo].[jugador] where [username] = " + "'" + req.body.Usuario +"'",{
+        type: Sequelize.QueryTypes.SELECT
+    })
+    .then(registros=>{
+        var data = [];
+        registros.forEach(registro=>{
+            data.push(registro);
+        })
+    //console.log((String(data[0].nivel)));
+    res.send(String(data[0].nivel))
     }).catch(error => console.log(error))
 };
