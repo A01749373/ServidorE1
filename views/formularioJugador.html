@@ -9,10 +9,28 @@
 
     </head>
     <body background="/images/giphy.gif">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="/menu/principal">Datablaze</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/jugador/agregarJugador">Crear cuenta<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/Sesion/iniciaSesion">Iniciar Sesión<span class="sr-only"></span></a>
+                </li>
+              </ul>
+            </div>
+        </nav>
         <div class="container">
             <img src="/images/datablaze.png" class="clase1"/>
         </div>
-        <br/>
+        <br>
+        <h1 class="title">Crea tu cuenta 👾</h1>
         <br/>
         <div class="container" class="clase3" >
             <form action="/jugador/agregarJugador" method="POST">
@@ -131,7 +149,9 @@
                                 <select name="Carrera" required>
                                     <option></option>
                                     <option value="Medicina">Medicina</option>
+                                    <option value="Derecho">Medicina</option>
                                     <option value="Ingeniería">Ingeniería</option>
+                                    <option value="Negocios">Medicina</option>
                                     <option value="Química">Química</option>
                                     <option value="Arquitectura">Arquitectura</option>
                                     <option value="Artes">Artes</option>

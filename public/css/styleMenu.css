@@ -4,6 +4,21 @@
     float: left;
 }
 
+.clase3 {
+    width: 50;
+    height: 20;
+    background-color:black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+    color: #fff;
+    text-align: center;
+    font-size: 70px;
+}
+
 .carousel-control-prev {
     left: 280px;
     border-bottom: 100px;
