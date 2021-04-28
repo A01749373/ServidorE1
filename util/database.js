@@ -23,7 +23,8 @@ const modelDefiners = [
     require('../models/pregunta'),
     require('../models/preguntaContestada'),
     require('../models/nivel'),
-    require('../models/partida')
+    require('../models/partida'),
+    require('../models/steam')
 ];
 
 //Vincular el objeto de conexión con los modelos

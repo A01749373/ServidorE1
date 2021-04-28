@@ -17,6 +17,7 @@ const nivelRoutes = require("./routes/nivel");
 const partidaRoutes = require("./routes/partida");
 const menuRoutes = require("./routes/menu");
 const sesionRoutes = require("./routes/sesion");
+const steamRoutes = require("./routes/steam"); 
 
 app.use('/jugador', jugadorRoutes);
 app.use('/pregunta',preguntaRoutes);
@@ -25,6 +26,7 @@ app.use('/nivel',nivelRoutes);
 app.use('/partida',partidaRoutes);
 app.use('/menu',menuRoutes);
 app.use('/Sesion',sesionRoutes);
+app.use('/steam', steamRoutes);
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs'); 
