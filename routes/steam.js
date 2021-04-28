@@ -9,7 +9,6 @@ router.get('/iniciaSesionSTEAM', usuarioSteamController.getIniciarSesionSteam);
 router.post('/iniciaSesionSTEAM', usuarioSteamController.postBuscarUsuarioSteam);
 
 router.get('/sesionSteam',usuarioSteamController.getSesionExitosaSteam);
-
 router.get('/estadisticasSTEAM', usuarioSteamController.getEstadisticasSteam); 
 
 module.exports = router;  
