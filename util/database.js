@@ -36,4 +36,4 @@ for(const modelDefiner of modelDefiners){
 applyRelations(sequelize);
 
 // Exportando el objeto sequelize 
-module.exports = sequelize;     
+module.exports = sequelize; 

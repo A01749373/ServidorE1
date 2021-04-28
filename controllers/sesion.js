@@ -24,13 +24,14 @@ exports.postBuscarUsuario = (req,res)=>{
         console.log(data)
         
         if (registros.length == 0){
+            //res.send("Usuario no válido")
             res.redirect('/Sesion/iniciaSesion')
             //Window.alert("Usuario no válido");
         }else{
-            res.render('sesionExitosa.html', {
+            res.render('sesionExitosa.html', { 
                 usuarios: data
             }),
-            res.redirect("/Sesion/exito")
+            res.redirect("/Sesion/exito") 
             
         }
     })
