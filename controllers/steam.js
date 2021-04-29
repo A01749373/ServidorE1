@@ -5,9 +5,19 @@ const {LocalStorage}= require('node-localstorage');
 var localStorage = new LocalStorage('./scratch');
 
 
- 
 exports.getIniciarSesionSteam = (req, res)=>{
-    res.sendFile(path.join(__dirname, '..', 'views', 'iniciarSesionSteam.html')); 
+    console.log(req.query)
+
+    if (req.query=={}){
+        res.render('iniciarSesionSteam.html',{
+            error: 0
+        })
+    }else{
+        res.render('iniciarSesionSteam.html',{
+            error: req.query.error
+        })
+    }
+    res.sendFile(path.join(__dirname, '..', 'views', 'IniciarSesion.html')); 
 };  
 
 exports.postBuscarUsuarioSteam = (req,res)=>{
@@ -28,7 +38,7 @@ exports.postBuscarUsuarioSteam = (req,res)=>{
         console.log(data)
         
         if (registros.length == 0){
-            res.redirect('/steam/iniciaSesionSTEAM')
+            res.redirect('/steam/iniciaSesionSTEAM?error=1')
             //Window.alert("Usuario no válido");
         }else{
             

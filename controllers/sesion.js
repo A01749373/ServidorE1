@@ -6,8 +6,19 @@ var localStorage = new LocalStorage('./scratch');
 
 
 exports.getIniciarSesion = (req, res)=>{
+    console.log(req.query)
+
+    if (req.query=={}){
+        res.render('IniciarSesion.html',{
+            error: 0
+        })
+    }else{
+        res.render('IniciarSesion.html',{
+            error: req.query.error
+        })
+    }
     res.sendFile(path.join(__dirname, '..', 'views', 'IniciarSesion.html')); 
-};  
+};   
 
 exports.postBuscarUsuario = (req,res)=>{
     Jugador.findAll({
@@ -28,7 +39,7 @@ exports.postBuscarUsuario = (req,res)=>{
         
         if (registros.length == 0){
             //res.send("Usuario no válido")
-            res.redirect('/Sesion/iniciaSesion')
+            res.redirect('/Sesion/iniciaSesion?error=1')
             //Window.alert("Usuario no válido");
         }else{
             res.redirect("/Sesion/exito") 

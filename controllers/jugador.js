@@ -27,7 +27,8 @@ exports.postAgregarJugador = (req, res)=>{
         nivelEstudios: req.body.nivel,
         carreraInteres: req.body.Carrera,
         materiaFavorita: req.body.materia,
-        fechaRegistro: year + "-" + month + "-" + date
+        fechaRegistro: year + "-" + month + "-" + date,
+        nivel: 1
     }).then(resultado=>{
         console.log("Registro exitoso")
     res.redirect("/jugador/confirmacion")
