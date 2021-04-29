@@ -44,3 +44,8 @@
 .carousel-indicators li {
     background-color: red;
 }
+
+.download {
+    width: 280px;
+    height: 80px;
+}
