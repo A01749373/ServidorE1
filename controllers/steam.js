@@ -1,6 +1,9 @@
 // Modelo asociado a la tabla usuarioSteam  
 const path = require('path');
 const Steam = require('../util/database').models.steam; 
+const {LocalStorage}= require('node-localstorage');
+var localStorage = new LocalStorage('./scratch');
+
 
  
 exports.getIniciarSesionSteam = (req, res)=>{
@@ -16,6 +19,7 @@ exports.postBuscarUsuarioSteam = (req,res)=>{
     })
     .then(registros=>{
         //console.log(registros)
+        localStorage.setItem('usuario', req.body.Username)
         var data=[];
         registros.forEach(registro=>{
             data.push(registro.dataValues);
@@ -27,9 +31,7 @@ exports.postBuscarUsuarioSteam = (req,res)=>{
             res.redirect('/steam/iniciaSesionSTEAM')
             //Window.alert("Usuario no válido");
         }else{
-            res.render('sesionSteam.html', {
-                usuarios: data
-            }),
+            
             res.redirect("/steam/sesionSteam")
             
         }
@@ -38,6 +40,11 @@ exports.postBuscarUsuarioSteam = (req,res)=>{
 
 exports.getSesionExitosaSteam = (req,res)=>{
     //res.send("Registro exitoso");
+    if (localStorage.getItem('usuario') != ""){
+        res.render('sesionExitosa.html',{
+            usuarios: localStorage.getItem('usuario')
+        })
+    }   
     res.sendFile(path.join(__dirname, '..', 'views', 'sesionSteam.html')); 
 }; 
 
