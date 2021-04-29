@@ -41,7 +41,7 @@ exports.postBuscarUsuarioSteam = (req,res)=>{
 exports.getSesionExitosaSteam = (req,res)=>{
     //res.send("Registro exitoso");
     if (localStorage.getItem('usuario') != ""){
-        res.render('sesionExitosa.html',{
+        res.render('sesionSteam.html',{
             usuarios: localStorage.getItem('usuario')
         })
     }   
