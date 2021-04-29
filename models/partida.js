@@ -14,7 +14,8 @@ const Partida = (sequelize)=>{
         },
         Puntaje:{
             type: Sequelize.INTEGER,
-            allowNull: false
+            allowNull: false,
+            default: 0
         }
     })
 };

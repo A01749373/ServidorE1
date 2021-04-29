@@ -18,9 +18,6 @@ exports.postAgregarPartida = (req,res)=>{
         sequelize.query("update [dbo].[jugador] set  [puntajeTotal] = (select sum([Puntaje]) from [dbo].[partida] where jugadorUsername=" + "'" + req.body.Usuario +"'" + ") where username= " + "'"+ req.body.Usuario + "'",{
             type: Sequelize.QueryTypes.UPDATE
         })
-        sequelize.query("update [dbo].[jugador] set [nivel] = (select max([nivelIdNivel] from [dbo].[partida] where jugadorUsername=" + "'" + req.body.Usuario +"'" + ") where username= " + "'"+ req.body.Usuario + "'",{
-            type: Sequelize.QueryTypes.UPDATE
-        })
       .catch(error=>console.log(error));
       })
       res.send('Partida Agregada')

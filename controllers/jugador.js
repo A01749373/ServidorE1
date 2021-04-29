@@ -159,14 +159,23 @@ exports.postBuscarJugadorUnity= (req,res)=>{
 
 exports.postActualizarNivel = (req,res)=>{ 
     nivel = parseInt(req.body.nivel);
-    sequelize.query("update [dbo].[jugador] set [nivel] =" + "'" + nivel + "'" + "where [username] =" + "'" + req.body.Usuario +"'",{
-        type: Sequelize.QueryTypes.UPDATE
+    console.log(nivel);
+    sequelize.query("SELECT IIF ((select max([nivelIdNivel]) from [dbo].[partida] where [jugadorUsername] ="+ "'" + req.body.Usuario+ "'"+") >= (select [nivel] from [dbo].[jugador] where [username] =" + "'" + req.body.Usuario+"'"+ "), 'YES', 'NO') as Nivel",{
+        type: Sequelize.QueryTypes.SELECT
     })
     .then(resultado=>{
+        console.log(resultado[0].Nivel);
+        if (resultado[0].Nivel == "YES"){
+            sequelize.query("update [dbo].[jugador] set [nivel] =" + "'" + nivel + "'" + "where [username] =" + "'" + req.body.Usuario +"'",{
+                type: Sequelize.QueryTypes.UPDATE
+            })
+            res.send("Nivel Actualizado")
+        }else{
+            res.send("No Actualiza Nivel")
+        }
         console.log("Partida Agregada")
-      .catch(error=>console.log(error));
       })
-      res.send('Nivel Actualizado')
+      .catch(error=>console.log(error));
 };
 
 exports.postBuscarNivel= (req,res)=>{
