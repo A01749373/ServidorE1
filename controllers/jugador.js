@@ -160,7 +160,7 @@ exports.postBuscarJugadorUnity= (req,res)=>{
 exports.postActualizarNivel = (req,res)=>{ 
     nivel = parseInt(req.body.nivel);
     console.log(nivel);
-    sequelize.query("SELECT IIF ((select max([nivelIdNivel]) from [dbo].[partida] where [jugadorUsername] ="+ "'" + req.body.Usuario+ "'"+") >= (select [nivel] from [dbo].[jugador] where [username] =" + "'" + req.body.Usuario+"'"+ "), 'YES', 'NO') as Nivel",{
+    sequelize.query("SELECT IIF (((select max([nivelIdNivel]) from [dbo].[partida] where [jugadorUsername] ="+ "'" + req.body.Usuario+ "'"+") >= (select [nivel] from [dbo].[jugador] where [username] =" + "'" + req.body.Usuario+"'"+ ") and " + "'" + nivel + "'"+ " <= 5), 'YES', 'NO') as Nivel",{
         type: Sequelize.QueryTypes.SELECT
     })
     .then(resultado=>{
